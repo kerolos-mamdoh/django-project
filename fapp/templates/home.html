@@ -1,0 +1,354 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>HOME PAGE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% block content %}
+
+
+
+
+{#<div class="container">#}
+{#  <table class="table">#}
+{#    <thead>#}
+{#      <tr>#}
+{#        <th>Tittle</th>#}
+{#        <th>Details</th>#}
+{#        <th>category</th>#}
+{#          <th>picture</th>#}
+{#          <th>total_target</th>#}
+{#          <th>tags</th>#}
+{#          <th>startdate</th>#}
+{#          <th>enddate</th>#}
+{#          <th>comment</th>#}
+{#          <th>donnates</th>#}
+{#      </tr>#}
+{#    </thead>#}
+{#    <tbody>#}
+{#    {% for d in data %}#}
+{#      <tr>#}
+{#        <td>{{ d.tittle }}</td>#}
+{#      <td>{{ d.details }}</td>#}
+{#       <td>{{ d.category }}</td>#}
+{#          {% if d.uploadimg.url %}#}
+{#          <td><img src="{{ d.uploadimg.url }}"></td>#}
+{#          {% else %}#}
+{#          <td>>none</td>#}
+{#          {% endif %}#}
+{#          <td>{{ d.total_target }}</td>#}
+{#          <td>{{ d.tags }}</td>#}
+{#          <td>{{ d.startdate }}</td>#}
+{#          <td>{{ d.edndate }}</td>#}
+{#           <td> <button><a href="{%url 'pcomment' d.id %}">comment</a></button></td>#}
+{#        <td> <button><a href="{%url 'donnate_form' d.id %}">fff</a></button></td>#}
+{#      {% if  request.user.is_superuser %}#}
+{#          <td>#}
+{#          <form class="example" action="{% url 'adminproject' d.id %}" method="post">#}
+{#            {% csrf_token %}#}
+{#            <button type="submit"> add feature project</button>#}
+{#</form>#}
+{#          </td>#}
+{##}
+{#      {% endif %}#}
+{#      </tr>#}
+{#    {% endfor %}#}
+{#    </tbody>#}
+{#  </table>#}
+{##}
+{##}
+{#<h1> date</h1>#}
+{# <table class="table">#}
+{#    <thead>#}
+{#      <tr>#}
+{#        <th>Tittle</th>#}
+{#        <th>Details</th>#}
+{#        <th>category</th>#}
+{#          <th>picture</th>#}
+{#          <th>total_target</th>#}
+{#          <th>tags</th>#}
+{#          <th>startdate</th>#}
+{#          <th>enddate</th>#}
+{#          <th>comment</th>#}
+{#      </tr>#}
+{#    </thead>#}
+{#    <tbody>#}
+{##}
+{#    {% for d in list %}#}
+{#      <tr>#}
+{#        <td>{{ d.tittle }}</td>#}
+{#      <td>{{ d.details }}</td>#}
+{#       <td>{{ d.category }}</td>#}
+{#         {% if d.uploadimg.url %}#}
+{#          <td><img src="{{ d.uploadimg.url }}"></td>#}
+{#          {% else %}#}
+{#          <td>>none</td>#}
+{#          {% endif %}#}
+{#          <td>{{ d.total_target }}</td>#}
+{#          <td>{{ d.tags }}</td>#}
+{#          <td>{{ d.startdate }}</td>#}
+{#          <td>{{ d.edndate }}</td>#}
+{#           <td> <button><a href="{%url 'pcomment' d.id %}">comment</a></button></td>#}
+{#        <td> <button><a href="{%url 'donnate_form' d.id %}">donnate</a></button></td>#}
+{#      </tr>#}
+{#    {% endfor %}#}
+{#    </tbody>#}
+{#  </table>#}
+{##}
+{#<h1>best donnates</h1>#}
+{#<table class="table">#}
+{#    <thead>#}
+{#      <tr>#}
+{#        <th>Tittle</th>#}
+{#          <th> amount </th>#}
+{#      </tr>#}
+{#    </thead>#}
+{#    <tbody>#}
+{##}
+{#    {% for x,y in dic.items %}#}
+{#      <tr>#}
+{#        <td>{{ x }}</td>#}
+{#      <td>{{ y }}</td>#}
+{##}
+{#      </tr>#}
+{#    {% endfor %}#}
+{#    </tbody>#}
+{#  </table>#}
+{##}
+{##}
+{#<h1> faeture project</h1>#}
+{# <table class="table">#}
+{#    <thead>#}
+{#      <tr>#}
+{#        <th>Tittle</th>#}
+{#        <th>Details</th>#}
+{#        <th>category</th>#}
+{#          <th>picture</th>#}
+{#          <th>total_target</th>#}
+{#          <th>tags</th>#}
+{#          <th>startdate</th>#}
+{#          <th>enddate</th>#}
+{#          <th>comment</th>#}
+{#      </tr>#}
+{#    </thead>#}
+{#    <tbody>#}
+{##}
+{#    {% for s,d in featurefromaprojects.items %}#}
+{#      <tr>#}
+{#        <td>{{ d.tittle }}</td>#}
+{#      <td>{{ d.details }}</td>#}
+{#       <td>{{ d.category }}</td>#}
+{#         {% if d.uploadimg.url %}#}
+{#          <td><img src="{{ d.uploadimg.url }}"></td>#}
+{#          {% else %}#}
+{#          <td>>none</td>#}
+{#          {% endif %}#}
+{#          <td>{{ d.total_target }}</td>#}
+{#          <td>{{ d.tags }}</td>#}
+{#          <td>{{ d.startdate }}</td>#}
+{#          <td>{{ d.edndate }}</td>#}
+{#          <td> <button><a href="{%url 'pcomment' d.id %}">comment</a></button></td>#}
+{#        <td> <button><a href="{%url 'donnate_form' d.id %}">donnate</a></button></td>#}
+{#      </tr>#}
+{#    {% endfor %}#}
+{#    </tbody>#}
+{#  </table>#}
+{##}
+{##}
+{#</div>#}
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="container">
+
+
+
+    <nav class="mx-auto" style="width: 97.37%;">
+      <div class="nav nav-tabs row text-center" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active col-lg-2 col-md-4 col-sm-6" id="nav-about-tab" data-toggle="tab"
+          href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="true"
+          style="border: 1px solid #313552;">Home</a>
+        <a class="nav-item nav-link col-lg-2 col-md-4 col-sm-6" id="nav-skills-tab" data-toggle="tab" href="#nav-skills"
+          role="tab" aria-controls="nav-skills" aria-selected="false" style="border: 1px solid #313552;">Latest Projects</a>
+        <a class="nav-item nav-link col-lg-2 col-md-4 col-sm-6" id="nav-service-tab" data-toggle="tab"
+          href="#nav-service" role="tab" aria-controls="nav-service" aria-selected="false"
+          style="border: 1px solid #313552;">best donnate</a>
+        <a class="nav-item nav-link col-lg-2 col-md-4 col-sm-6" id="nav-interview-tab" data-toggle="tab"
+          href="#nav-interview" role="tab" aria-controls="nav-interview" aria-selected="false"
+          style="border: 1px solid #313552;">Feature Project</a>
+
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent" style="width: 100%; background-color: #313552;">
+      <div class="tab-pane fade show active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+              <table class="table text-center " style="background-color: #1f2336; border: 1px solid white;">
+    <thead>
+      <tr>
+        <th>Tittle</th>
+        <th>Details</th>
+        <th>category</th>
+          <th>picture</th>
+          <th>total_target</th>
+          <th>tags</th>
+          <th>startdate</th>
+          <th>enddate</th>
+          <th>comment</th>
+          <th>donnates</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for d in data %}
+      <tr>
+        <td>{{ d.tittle }}</td>
+      <td>{{ d.details }}</td>
+       <td>{{ d.category }}</td>
+          {% if d.uploadimg.url %}
+          <td><img src="{{ d.uploadimg.url }}" ></td>
+          {% else %}
+          <td>>none</td>
+          {% endif %}
+          <td>{{ d.total_target }}</td>
+          <td>{{ d.tag }}</td>
+          <td>{{ d.startdate }}</td>
+          <td>{{ d.edndate }}</td>
+           <td> <button><a href="{%url 'pcomment' d.id %}">comment</a></button></td>
+        <td> <button><a href="{%url 'donnate_form' d.id %}">donnate</a></button></td>
+      {% if request.user.is_superuser %}
+          <td>
+          <form class="example" action="{% url 'adminproject' d.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit"> add feature project</button>
+            </form>
+          </td>
+      {% endif %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+      </div>
+      <div class="tab-pane fade" id="nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
+
+ <table class="table">
+    <thead>
+      <tr>
+        <th>Tittle</th>
+        <th>Details</th>
+        <th>category</th>
+          <th>picture</th>
+          <th>total_target</th>
+          <th>tags</th>
+          <th>startdate</th>
+          <th>enddate</th>
+          <th>comment</th>
+          <th>donnate</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    {% for d in list %}
+      <tr>
+        <td>{{ d.tittle }}</td>
+      <td>{{ d.details }}</td>
+       <td>{{ d.category }}</td>
+         {% if d.uploadimg.url %}
+          <td><img src="{{ d.uploadimg.url }}"></td>
+          {% else %}
+          <td>>none</td>
+          {% endif %}
+          <td>{{ d.total_target }}</td>
+          <td>{{ d.tag }}</td>
+          <td>{{ d.startdate }}</td>
+          <td>{{ d.edndate }}</td>
+           <td> <button><a href="{%url 'pcomment' d.id %}">comment</a></button></td>
+        <td> <button><a href="{%url 'donnate_form' d.id %}">donnate</a></button></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+      </div>
+      <div class="tab-pane fade" id="nav-service" role="tabpanel" aria-labelledby="nav-service-tab">
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Tittle</th>
+          <th> amount </th>
+      </tr>
+    </thead>
+    <tbody>
+
+    {% for x,y in dic.items %}
+      <tr>
+        <td>{{ x }}</td>
+      <td>{{ y }}</td>
+
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+      </div>
+      <div class="tab-pane fade" id="nav-interview" role="tabpanel" aria-labelledby="nav-interview-tab">
+
+ <table class="table">
+    <thead>
+      <tr>
+        <th>Tittle</th>
+        <th>Details</th>
+        <th>category</th>
+          <th>picture</th>
+          <th>total_target</th>
+          <th>tags</th>
+          <th>startdate</th>
+          <th>enddate</th>
+          <th>comment</th>
+          <th>donnate</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    {% for s,d in featurefromaprojects.items %}
+      <tr>
+        <td>{{ d.tittle }}</td>
+      <td>{{ d.details }}</td>
+       <td>{{ d.category }}</td>
+         {% if d.uploadimg.url %}
+          <td><img src="{{ d.uploadimg.url }}"></td>
+          {% else %}
+          <td>>none</td>
+          {% endif %}
+          <td>{{ d.total_target }}</td>
+          <td>{{ d.tag }}</td>
+          <td>{{ d.startdate }}</td>
+          <td>{{ d.edndate }}</td>
+          <td> <button><a href="{%url 'pcomment' d.id %}">comment</a></button></td>
+        <td> <button><a href="{%url 'donnate_form' d.id %}">donnate</a></button></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+      </div>
+
+
+    </div>
+  </div><br><br><br><br>
+
+{% endblock %}
+</body>
+</html>

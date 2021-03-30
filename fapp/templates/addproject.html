@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+{% block content %}
+<body>
+
+<div class="container" >
+<div style="background-color: #313552">
+  <form class="mx-auto py-3" action="{% url 'addproject_database' %}" method="POST" enctype="multipart/form-data" style="width: 90%">
+      {% csrf_token %}
+    <div class="form-group">
+      <label for="email">Tittle:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter tittle" name="titles" required>
+    </div>
+    <div class="form-group">
+      <label for="pwd">details:</label>
+      <input type="text" class="form-control" id="pwd" placeholder="Enter text" name="det" required>
+    </div>
+      <div class="form-group">
+      <label for="pwd">total target:</label>
+      <input type="number" class="form-control" id="pwd" placeholder="Enter text" name="target" required>
+    </div>
+      <div class="form-group">
+      <label for="pwd">startdate:</label>
+      <input type="datetime-local" class="form-control" id="pwd" placeholder="Enter text" name="sdate" required>
+    </div>
+      <div class="form-group">
+      <label for="pwd">end date:</label>
+      <input type="datetime-local" class="form-control" id="pwd" placeholder="Enter text" name="enddate" required>
+    </div>
+       <div class="form-group">
+      <label for="pwd">Tags:</label>
+      <input type="text" class="form-control" id="pwd" placeholder="Enter text" name="tag" required>
+    </div>
+
+      <div class="form-group">
+      <label for="pwd">uploadimg:</label>
+      <input type="file" class="form-control" id="pwd" placeholder="Enter text" name="im" required>
+    </div>
+     <label for="cars">Choose a car:</label>
+  <select name="cat" id="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="opel">Opel</option>
+    <option value="audi">Audi</option>
+  </select>
+      <br>
+    <button type="submit" >Submit</button>
+  </form>
+</div>
+</div>
+{% endblock %}
+</body>
+</html>

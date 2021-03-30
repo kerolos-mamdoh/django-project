@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Slick -->
+  <link rel="stylesheet" type="text/css" href="slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick-theme.css" />
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/932600baed.js" crossorigin="anonymous"></script>
+    <style>
+
+{#        table{#}
+{#            color: white;#}
+{#        }#}
+{#        button {#}
+{#  background-color: black; /* Green */#}
+{#  border: none;#}
+{#  color: white;#}
+{#  padding: 16px 32px;#}
+{#  text-align: center;#}
+{#  text-decoration: none;#}
+{#  display: inline-block;#}
+{#  font-size: 16px;#}
+{#  margin: 4px 2px;#}
+{#  transition-duration: 0.4s;#}
+{#  cursor: pointer;#}
+{#}#}
+      a {
+ text-decoration: none;
+color: #ffc756
+}
+       a:hover {
+           color: hotpink;
+           text-decoration: none
+       }
+{#}#}
+{##}
+{#/* selected link */#}
+{#a:active {#}
+{#  color: blue;#}
+{#    text-decoration: none;#}
+{#}#}
+
+
+th
+{
+   font-weight:bold;
+    color: #ffc756;
+    font-size: larger;
+}
+img
+{
+    width: 70px;
+    height: 70px;
+}
+tr
+{
+    color: white;
+}
+table
+{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+    body,
+    html {
+      width: 100%;
+      margin: 0px;
+      background-color: #1f2336;
+      background-attachment: fixed;
+      background-position: center;
+      position: relative;
+      overflow-x: hidden;
+      color: white;
+    }
+    button
+    {
+        color: #ffc756; border: 1px solid #ffc756;
+       background-color: #1f2336
+    }
+
+
+
+    .row .col-lg-12 .navbar .navbar-brand {
+      color: white;
+      font-size: 40px;
+      font-family: Forte;
+    }
+
+    .row .col-lg-12 .navbar .collapse .navbar-nav .nav-item .nav-link {
+      color: white;
+      font-size: medium;
+    }
+
+    .row .col-lg-12 .navbar .collapse .navbar-nav .nav-item .nav-link:hover {
+      color: #ffc756;
+    }
+
+    .myButt {
+      border: 1px solid #ffc756;
+      color: #ffc756;
+      border-radius: 3px;
+      width: 150px;
+      height: 37px;
+    }
+
+    .mybutton {
+      border: 1px solid #ffc756;
+      color: #ffc756;
+      border-radius: 3px;
+      width: 150px;
+      height: 45px;
+    }
+
+    .mybutton:hover,
+    .myButt:hover {
+      background-color: #ffc756;
+      /* background-color: #ffd601; */
+      color:#1f2336;
+    }
+
+    .row .col-lg-12 .navbar .collapse .navbar-nav .serch-btn {
+      border: 1px solid #ffc756;
+      color: #ffc756;
+      border-radius: 3px;
+      width: 150px;
+      height: 45px;
+    }
+
+    .row .col-lg-12 .navbar .collapse .navbar-nav .serch-btn:hover {
+      background-color: #ffc756;
+      color:#1f2336;
+    }
+
+    /* .row .col-lg-12 .navbar .collapse .navbar-nav .activee{
+
+    } */
+    .container nav .nav-tabs {
+      /* padding: 15px 50px; */
+      font-size: 20px;
+      /* font-weight: 500; */
+    }
+
+    .container nav .nav-tabs .nav-link {
+      color: white;
+    }
+
+    .container nav .nav-tabs .active {
+      color:#1f2336;
+      background-color: #ffc756;
+    }
+    .container .mx-auto .nav .nav-item:hover{
+      background-color: #ffc756;
+      color: #1f2336;
+    }
+
+    #back2Top {
+      width: 50px;
+      line-height: 50px;
+      overflow: hidden;
+      z-index: 999;
+      display: none;
+      cursor: pointer;
+      -moz-transform: rotate(270deg);
+      -webkit-transform: rotate(270deg);
+      -o-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+      transform: rotate(270deg);
+      position: fixed;
+      bottom: 50px;
+      right: 20px;
+      background-color:#1f2336;
+      color:#ffc756;
+      text-align: center;
+      font-size: 15px;
+      text-decoration: none;
+      border-radius: 50%;
+      border: 1px solid #ffc756;
+    }
+
+    #back2Top:hover {
+      background-color: #ffc756;
+      color:#1f2336;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    /* Container for skill bars */
+    .containerSkills {
+      width: 100%;
+      background-color: #1f2336;
+    }
+
+    .skills {
+      text-align: right;
+      /* Right-align text */
+      padding-top: 5px;
+      /* Add top padding */
+      /* padding-bottom: 10px; */
+      /* Add bottom padding */
+      color: white;
+      /* White text color */
+    }
+
+    .html {
+      width: 90%;
+      background-color: #ffc756;
+    }
+
+    .css {
+      width: 80%;
+      background-color: #ffc756;
+    }
+
+    .js {
+      width: 65%;
+      background-color: #ffc756;
+    }
+
+    .php {
+      width: 75%;
+      background-color: #ffc756;
+    }
+
+    .containerEX {
+      position: relative;
+      width: 100%;
+    }
+
+    .imageEX {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: 300px;
+      transition: .5s ease;
+      backface-visibility: hidden;
+      border-radius: 20px;
+    }
+
+    .middleEX {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      /* text-align: center; */
+    }
+
+    .containerEX:hover .imageEX {
+      opacity: 0.3;
+    }
+
+    .containerEX:hover .middleEX {
+      opacity: 1;
+    }
+
+    /* [1] The container */
+    .img-hover-zoom {
+      height: 200px;
+      /* [1.1] Set it as per your need */
+      overflow: hidden;
+      /* [1.2] Hide the overflowing of child elements */
+    }
+
+    /* [2] Transition property for smooth transformation of images */
+    .img-hover-zoom img {
+      transition: transform .5s ease;
+    }
+
+    /* [3] Finally, transforming the image when container gets hovered */
+    .img-hover-zoom:hover img {
+      transform: scale(1.5);
+    }
+
+    .myDiv:hover {
+      background-color: #ffc756;
+      border-radius: 7px;
+      color: #1f2336;
+    }
+    .container-fluid .container .row .col .navbar .navbar-nav .nav-item .nav-link{
+      color: white;
+    }
+    .container-fluid .container .row .col .navbar .navbar-nav .nav-item .nav-link:hover{
+      color:#ffc756;
+    }
+    .container .tab-content .tab-pane .row .col-lg-4 h2:hover{
+      color: #ffc756;
+    }
+
+
+
+
+    </style>
+</head>
+<body>
+
+{#<nav class="navbar navbar-expand-sm bg-dark navbar-dark">#}
+{#  <!-- Brand/logo -->#}
+{#  <a class="navbar-brand" href="{%url 'profile' %}">profile</a>#}
+{##}
+{#  <!-- Links -->#}
+{#  <ul class="navbar-nav">#}
+{#    <li class="nav-item">#}
+{#      <a class="nav-link" href="{% url 'project_form' %}">ADD PROJECT</a>#}
+{#    </li>#}
+{#    <li class="nav-item">#}
+{#      <a class="nav-link" href="{% url 'homepage' %}">HOME</a>#}
+{#    </li>#}
+{#    <li class="nav-item">#}
+{#      <a class="nav-link" href="#">Link 3</a>#}
+{#    </li>#}
+{#  </ul>#}
+{#</nav>#}
+
+
+<nav id="na" class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand col-lg-6 col-md-6 col-sm-6 " href="#" style="color: white;
+      font-size: 40px;
+      font-family: Forte;">
+            <i class="fab fa-rockrms" style="font-size:40px;color:#ffc756"></i> Tiger</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto mx-auto">
+              <li class="nav-item activee pr-2">
+                <a class="nav-link" href="{% url 'homepage' %}" style="color: #ffc756;">HOME</a>
+              </li>
+              <li class="nav-item pr-2">
+                <a class="nav-link" href="{% url 'project_form' %}" style="color: white">Add Project</a>
+              </li>
+              <li class="nav-item pr-2">
+                <a class="nav-link" href="{%url 'profile' %}" style="color: white">Profile</a>
+              </li>
+                <li>
+                <form class="example" action="{% url 'search' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Search by tittle.." name="search" style="width:130px">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                </li>
+                <li>
+            <form class="example" action="{% url 'searchtags' %}" method="post">
+                {% csrf_token %}
+                <input type="text" placeholder="Search by tags.." name="tag" style="width:110px">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                </li>
+            </ul>
+          </div>
+        </nav>
+
+
+
+<div class="container-fluid">
+
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

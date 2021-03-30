@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% block content %}
+<div class="container">
+<button ><a href="{% url 'edit_form' %}">Edit Profile</a></button>
+<button ><a href="{% url 'delete_profile' %}">delete Profile</a></button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Tittle</th>
+        <th>Details</th>
+        <th>category</th>
+          <th>picture</th>
+          <th>total_target</th>
+          <th>tags</th>
+          <th>startdate</th>
+          <th>enddate</th>
+          <th>donnat</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for d in data %}
+      <tr>
+        <td>{{ d.tittle }}</td>
+      <td>{{ d.details }}</td>
+       <td>{{ d.category }}</td>
+          <td>
+                       {% if d.uploadimg.url %}
+          <img src="{{ d.uploadimg.url }}">
+          {% else %}
+          <td>>none</td>
+          {% endif %}
+          </td>
+          <td>{{ d.total_target }}</td>
+          <td>{{ d.tag }}</td>
+          <td>{{ d.startdate }}</td>
+          <td>{{ d.edndate }}</td>
+          <td> <button><a href="{%url 'donnate_projects' d.id %}">donnates</a></button></td>
+
+
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+</body>
+</html>
